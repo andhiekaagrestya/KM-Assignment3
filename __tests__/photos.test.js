@@ -37,7 +37,7 @@ beforeAll(async () => {
   });
   const hashedUser = { ...user };
   hashedUser.password = hash(hashedUser.password);
-  userToken = await queryInterface.bulkInsert("Users", [hashedUser]);
+  await queryInterface.bulkInsert("Users", [hashedUser]);
   await queryInterface.bulkInsert("Photos", [defaultPhoto]);
 });
 
